@@ -6,6 +6,7 @@ const { otherRouter } = require("./routes/other");
 const { gadgetsRouter } = require("./routes/gadgets");
 const other = require("./routes/other");
 const setupSwagger = require("./swagger");
+const cors = require('cors');
 
 require("dotenv").config();
 
@@ -25,6 +26,11 @@ async function verifyDatabaseConnection() {
 const app = express();
 
 app.use(express.json());
+app.use(cors({
+  origin: [process.env.API_BASE_URL],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 setupSwagger(app);
 
 app.use("/", otherRouter);

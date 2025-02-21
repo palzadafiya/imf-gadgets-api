@@ -13,8 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: "https://imf-gadgets-api-2hf3.onrender.com:" + process.env.PORT,
-        description: "Local development server",
+        url: process.env.API_BASE_URL || 'http://localhost:5000'
       },
     ],
   },
