@@ -13,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.API_BASE_URL
+        url: "https://imf-gadgets-api-2hf3.onrender.com"
       },
     ],
   },

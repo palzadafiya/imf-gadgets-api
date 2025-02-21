@@ -27,7 +27,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: process.env.API_BASE_URL,
+    origin: "https://imf-gadgets-api-2hf3.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "token"],
     credentials: true
