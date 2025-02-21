@@ -1,6 +1,8 @@
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
+require("dotenv").config();
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -11,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
+        url: "https://imf-gadgets-api-2hf3.onrender.com:" + process.env.PORT,
         description: "Local development server",
       },
     ],
